@@ -26,8 +26,6 @@ var map = new ol.Map({
   ],
   view: new ol.View({
     projection: projection
-    //center: [445007.5846, 316262.159],
-    //zoom: 2,
   }),
 });
 
