@@ -1,0 +1,27 @@
+---
+pagination:
+    data: maps
+    size: 1
+    alias: map
+permalink: "/{{ map.slug }}/index.html"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ map.title }}</title>
+    <link  rel="stylesheet" href="/node_modules/ol/ol.css" />
+    <link  rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="/node_modules/ol/dist/ol.js"></script>
+    <script>
+        var wms = {{ map.wms | dump | safe }}
+    </script>
+    <script src="/js/map.js"></script>
+  </body>
+
+</html>

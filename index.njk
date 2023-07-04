@@ -1,0 +1,10 @@
+<!doctype html><title>Page title</title>
+
+<ul>
+    {% for map in maps %}
+    <li>
+        <a href="/{{ map.slug }}">
+            {{ map.title }}</li>
+        </a>
+    {% endfor %}
+</ul>

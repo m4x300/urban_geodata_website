@@ -1,0 +1,11 @@
+[
+    {
+        "title": "Stadtverfall Wien",
+        "slug": "stadtverfall-wien",
+        "wms": {
+            "url": "https://geo.isr.oeaw.ac.at/geoserver/test/wms?",
+            "bounds":  [445007.5846, 316262.159, 457627.0087, 325821.7082],
+            "layer": "test:Wien_Stadtverfall_web"
+        }
+    }
+]
