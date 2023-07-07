@@ -3,9 +3,30 @@
         "title": "Stadtverfall Wien",
         "slug": "stadtverfall-wien",
         "wms": {
-            "url": "https://geo.isr.oeaw.ac.at/geoserver/test/wms?",
-            "bounds":  [445007.5846, 316262.159, 457627.0087, 325821.7082],
-            "layer": "test:Wien_Stadtverfall_web"
+            "url": "https://geo.isr.oeaw.ac.at/geoserver/urban_geodata/wms?",
+            "bounds":  [1800244.8901724704, 6134530.142055105, 1805136.8599827217, 6139422.111865357],
+            "layer": "urban_geodata:Wien_Stadtverfall_web",
+            "backdrop": "basemap"
+        }
+    },
+    {
+        "title": "Wien 1903",
+        "slug": "wien1903",
+        "wms": {
+            "url": "https://geo.isr.oeaw.ac.at/geoserver/urban_geodata/wms?",
+            "bounds":  [1803612.6334999999962747,6127872.0195000004023314,1838179.7309999999124557,6154349.8338999999687076],
+            "layer": "urban_geodata:1903",
+            "backdrop": "basemap"
+        }
+    },
+    {
+        "title": "Budapest",
+        "slug": "stadtverfall-budapest",
+        "wms": {
+            "url": "https://geo.isr.oeaw.ac.at/geoserver/urban_geodata/wms?",
+            "bounds":  [2117775.872456544, 6017960.858266244, 2125627.1835807725, 6028453.813869935],
+            "layer": "urban_geodata:Budapest_Stadtverfall_90er_modified",
+            "backdrop": "osm"
         }
     }
 ]

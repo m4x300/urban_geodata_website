@@ -13,11 +13,25 @@ permalink: "/{{ map.slug }}/index.html"
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ map.title }}</title>
     <link  rel="stylesheet" href="/node_modules/ol/ol.css" />
+    <link rel="stylesheet" href="/node_modules/ol-layerswitcher/dist/ol-layerswitcher.css" />
     <link  rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <div id="map"></div>
+            
+        <div id="blender">
+          <label>
+            <input type="checkbox" id="ovl-multiply" />
+            Multiply
+          </label>
+            <label>
+            	<span>Trancparency</span>
+              <input type="range" min="0" max="100" value="100" class="slider" id="ovl-trans">
+            </label>
+        </div>
+
     <script src="/node_modules/ol/dist/ol.js"></script>
+    <script src="/node_modules/ol-layerswitcher/dist/ol-layerswitcher.js"></script>
     <script>
         var wms = {{ map.wms | dump | safe }}
     </script>
