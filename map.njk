@@ -3,7 +3,7 @@ pagination:
     data: maps
     size: 1
     alias: map
-permalink: "/{{ map.slug }}/index.html"
+permalink: "/{{ map.slug }}/map/index.html"
 ---
 
 <!DOCTYPE html>
@@ -17,6 +17,11 @@ permalink: "/{{ map.slug }}/index.html"
     <link  rel="stylesheet" href="/style.css" />
   </head>
   <body>
+    <h1>{{ map.title }}</h1>
+    <nav>
+      <a href="/{{ map.slug}}">Zur Beschreibung</a>
+      <a href="/">Zur Übersicht</a>
+    </nav>
     <div id="map"></div>
             
         <div id="blender">
