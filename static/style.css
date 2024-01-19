@@ -58,6 +58,7 @@ a[href] {
 main, footer {
     max-width: 90ch;
     margin-inline: auto;
+    line-height: 2;
 }
 
 footer {
@@ -84,7 +85,7 @@ nav {
 .map-card {
     background-color: var(--color-primary);
     color: var(--color-primary--text);
-    padding: 1rem;
+    padding: 0.25rem 3ch;
 }
 .map-card a {
     color: var(--color-gray);
