@@ -4,43 +4,35 @@ pagination:
     size: 1
     alias: map
 permalink: "/{{ map.slug }}/map/index.html"
+layout: "page.njk"
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ map.title }}</title>
-    <link  rel="stylesheet" href="/node_modules/ol/ol.css" />
-    <link rel="stylesheet" href="/node_modules/ol-layerswitcher/dist/ol-layerswitcher.css" />
-    <link  rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <h1>{{ map.title }}</h1>
-    <nav>
-      <a href="/{{ map.slug}}">Zur Beschreibung</a>
-      <a href="/">Zur Übersicht</a>
-    </nav>
-    <div id="map"></div>
-            
-        <div id="blender">
-          <label>
-            <input type="checkbox" id="ovl-multiply" />
-            Multiply
-          </label>
-            <label>
-            	<span>Trancparency</span>
-              <input type="range" min="0" max="100" value="100" class="slider" id="ovl-trans">
-            </label>
-        </div>
+<link  rel="stylesheet" href="/node_modules/ol/ol.css" />
+<link rel="stylesheet" href="/node_modules/ol-layerswitcher/dist/ol-layerswitcher.css" />
 
-    <script src="/node_modules/ol/dist/ol.js"></script>
-    <script src="/node_modules/ol-layerswitcher/dist/ol-layerswitcher.js"></script>
-    <script>
-        var wms = {{ map.wms | dump | safe }}
-    </script>
-    <script src="/js/map.js"></script>
-  </body>
+<main>
+  <h1>{{ map.title }}</h1>
+  <nav>
+    <a href="/{{ map.slug}}">Zur Beschreibung</a>
+    <a href="/">Zur Übersicht</a>
+  </nav>
+</main>
 
-</html>
+<div id="map"></div>
+<div id="blender">
+  <label>
+    <input type="checkbox" id="ovl-multiply" />
+    Multiply
+  </label>
+    <label>
+      <span>Trancparency</span>
+      <input type="range" min="0" max="100" value="100" class="slider" id="ovl-trans">
+    </label>
+</div>
+
+<script src="/node_modules/ol/dist/ol.js"></script>
+<script src="/node_modules/ol-layerswitcher/dist/ol-layerswitcher.js"></script>
+<script>
+    var wms = {{ map.wms | dump | safe }}
+</script>
+<script src="/js/map.js"></script>

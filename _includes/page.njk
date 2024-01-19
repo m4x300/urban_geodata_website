@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        {% block title %}
+        {% if map %}
+            {{ map.name }}
+        {% else %}
+            Urban Geodata
+        {% endif %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    {{ content | safe }}
+
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}
+  </body>
+</html>

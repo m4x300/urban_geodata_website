@@ -1,38 +1,27 @@
+---
+layout: page.njk
+---
 
+<main>
+<h1>Urban Geodata</h1>
+<p>
+    Das urban geodata Projekt... TODO
+</p>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Urban Geodata</title>
-    <link  rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <h1>Urban Geodata</h1>
-    
+{% for map in maps %}
+<article class="map-card">
+    <h2 class="u-align-h">
+        <img src="https://placehold.co/100">
+        <a href="/{{ map.slug }}">
+            {{ map.title }}
+        </a>
+    </h2>
     <p>
-        Das urban geodata Projekt... TODO
+        {{ map.teaser }}
     </p>
-
-    <ul>
-        {% for map in maps %}
-        <li>
-            <h2>
-                <img src="https://placehold.co/100">
-                <a href="/{{ map.slug }}">
-                    {{ map.title }}
-                </a>
-            </h2>
-            <p>
-                {{ map.teaser }}
-            </p>
-            <a href="/{{ map.slug }}/map">
-                Karte öffnen
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-    {% include "footer.html" %}
-  </body>
-</html>
+    <a href="/{{ map.slug }}/map">
+        Karte öffnen
+    </a>
+</article>
+{% endfor %}
+</main>
