@@ -5,6 +5,8 @@ pagination:
     alias: map
 permalink: "/{{ map.slug }}/map/index.html"
 layout: "page.njk"
+eleventyComputed:
+    title: "{{ map.title }}"
 ---
 
 <link  rel="stylesheet" href="/node_modules/ol/ol.css" />
