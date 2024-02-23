@@ -23,13 +23,14 @@ eleventyComputed:
 
   <div class="map-map" id="map">
     <div class="map-blender">
-      <label>
-        <input type="checkbox" id="ovl-multiply" />
-        Multiply
-      </label>
-      <label>
-        <span>Trancparency</span>
+      <label class="u-align-h" title="Opazität des Daten-Layers">
+        <img src="/img/contrast.svg">
+        <span class="visually-hidden">Opazität des Daten-Layers</span>
         <input type="range" min="0" max="100" value="100" class="slider" id="ovl-trans">
+      </label>
+      <label class="u-align-h">
+        <input type="checkbox" id="ovl-multiply" />
+        Multiplizieren
       </label>
     </div>
   </div>
