@@ -1,44 +1,121 @@
 /* cabin-regular - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
     font-family: 'Cabin';
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/cabin-v27-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  
-  /* cabin-italic - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    src: url('/fonts/cabin-v27-latin-regular.woff2') format('woff2');
+}
+
+/* cabin-italic - latin */
+@font-face {
+    font-display: swap;
     font-family: 'Cabin';
     font-style: italic;
     font-weight: 400;
-    src: url('/fonts/cabin-v27-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  
-  /* cabin-600 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    src: url('/fonts/cabin-v27-latin-italic.woff2') format('woff2');
+}
+
+/* cabin-600 - latin */
+@font-face {
+    font-display: swap;
     font-family: 'Cabin';
     font-style: normal;
     font-weight: 600;
-    src: url('/fonts/cabin-v27-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    src: url('/fonts/cabin-v27-latin-600.woff2') format('woff2');
+}
+
+/* lato-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/lato-v24-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lato-italic - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/lato-v24-latin-italic.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lato-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/lato-v24-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
 
-* {
+/** CSS Reset
+ based on https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/** Default styles */
+
 :root {
     --rgb-blue: 79, 131, 176;
     --color-blue: rgb(var(--rgb-blue));
-    --color-white: rgb(255,255,255);
-    --color-gray: rgb(200,200,200);
+    --color-white: rgb(255, 255, 255);
+    --color-gray: rgb(200, 200, 200);
     --color-primary: var(--color-blue);
     --color-primary--text: var(--color-white);
 
     --font-fallback: "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-primary: Cabin, var(--font-fallback);
+    --font-display: Cabin, var(--font-fallback);
     --font-default: Lato, var(--font-fallback);
 
     font-size: 16px;
@@ -46,8 +123,11 @@
 }
 
 
-h1, h2, h3, h4 {
-    font-family: var(--font-primary);
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
 }
 
 a[href] {
@@ -55,7 +135,8 @@ a[href] {
 }
 
 
-main, footer {
+main,
+footer {
     max-width: 90ch;
     margin-inline: auto;
     line-height: 2;
@@ -70,8 +151,9 @@ footer * {
     font-size: 0.8rem;
 }
 
-nav a, footer a {
-    font-family: var(--font-primary);
+nav a,
+footer a {
+    font-family: var(--font-display);
 }
 
 nav {
@@ -82,15 +164,19 @@ nav {
     padding: 1rem 0;
 }
 
+/** Element Styles */
+
 .map-card {
     background-color: var(--color-primary);
     color: var(--color-primary--text);
     padding: 0.25rem 3ch;
 }
+
 .map-card a {
     color: var(--color-gray);
 }
-.map-card + .map-card {
+
+.map-card+.map-card {
     margin-top: 1rem;
 }
 
