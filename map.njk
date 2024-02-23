@@ -12,24 +12,27 @@ eleventyComputed:
 <link  rel="stylesheet" href="/node_modules/ol/ol.css" />
 <link rel="stylesheet" href="/node_modules/ol-layerswitcher/dist/ol-layerswitcher.css" />
 
-<main>
-  <h1>{{ map.title }}</h1>
-  <nav>
-    <a href="/{{ map.slug}}">Zur Beschreibung</a>
-    <a href="/">Zur Übersicht</a>
-  </nav>
-</main>
+<div class="map-page">
+  <main class="map-header">
+    <h1>{{ map.title }}</h1>
+    <nav>
+      <a href="/{{ map.slug}}">Zur Beschreibung</a>
+      <a href="/">Zur Übersicht</a>
+    </nav>
+  </main>
 
-<div id="map"></div>
-<div id="blender">
-  <label>
-    <input type="checkbox" id="ovl-multiply" />
-    Multiply
-  </label>
-    <label>
-      <span>Trancparency</span>
-      <input type="range" min="0" max="100" value="100" class="slider" id="ovl-trans">
-    </label>
+  <div class="map-map" id="map">
+    <div class="map-blender">
+      <label>
+        <input type="checkbox" id="ovl-multiply" />
+        Multiply
+      </label>
+        <label>
+          <span>Trancparency</span>
+          <input type="range" min="0" max="100" value="100" class="slider" id="ovl-trans">
+        </label>
+    </div>
+  </div>
 </div>
 
 <script src="/node_modules/ol/dist/ol.js"></script>
