@@ -76,7 +76,8 @@ map.getView().fit(wms.bounds, map.getSize());
 if (layers[0] instanceof ol.layer.Group && layers[0].getLayers().getLength() > 1) {
   const layerSwitcher = new ol.control.LayerSwitcher({
     reverse: true,
-    groupSelectStyle: 'group'
+    groupSelectStyle: 'group',
+    // activationMode: 'click'
   });
   map.addControl(layerSwitcher);
 }

@@ -176,6 +176,7 @@ nav {
     align-items: center;
     gap: 1ch;
 }
+
 .u-flex-wrap {
     flex-wrap: wrap;
 }
@@ -192,6 +193,7 @@ nav {
 
 /** Element Styles */
 
+/** Map Overview */
 .map-card {
     background-color: var(--color-primary);
     color: var(--color-primary--text);
@@ -206,6 +208,7 @@ nav {
     margin-top: 1rem;
 }
 
+/** Map Page */
 .map-page {
     display: flex;
     flex-direction: column;
@@ -216,6 +219,7 @@ nav {
     flex: 0 0 auto;
     width: 100%;
 }
+
 .map-header h1 {
     margin-inline-end: auto;
 }
@@ -226,14 +230,46 @@ nav {
     position: relative;
 }
 
-.layer-switcher .panel {
-    color: rebeccapurple;
+/** Override and align styles from ol-layerswitcher */
+div.layer-switcher {
+    top: .5em;
+    right: .5em;
 }
+
+div.layer-switcher .panel {
+    padding: .5em;
+    border-radius: 0;
+}
+
+div.layer-switcher ul {
+    margin: 0.5rem 0;
+}
+
+div.layer-switcher ul ul {
+    padding-inline: 0;
+}
+
+div.layer-switcher ul ul li {
+    display: flex;
+    gap: 1ch;
+    align-items: center;
+}
+
+div.layer-switcher li input {
+    position: static;
+}
+
+div.layer-switcher li label {
+    padding: 0;
+    margin: 0;
+}
+
+/** Widget for Opacity and Blend Mode */
 
 .map-blender {
     position: absolute;
-    bottom: 0.5rem;
-    left: 1ch;
+    bottom: .5em;
+    left: .5em;
     padding: 0.25rem 1ch;
     z-index: 100;
     background-color: white;
