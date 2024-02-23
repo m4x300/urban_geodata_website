@@ -1,11 +1,12 @@
 {
   "name": "urban-geodata-website",
+  "type": "module",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "3.0.0-alpha.5"
   },
   "dependencies": {
     "ol": "^8.2.0",

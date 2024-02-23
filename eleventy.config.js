@@ -1,4 +1,4 @@
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({"static": "."});
    
     eleventyConfig.addPassthroughCopy("node_modules/ol/dist/ol.js");
