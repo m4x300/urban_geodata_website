@@ -176,6 +176,9 @@ nav {
     align-items: center;
     gap: 1ch;
 }
+.u-flex-wrap {
+    flex-wrap: wrap;
+}
 
 .visually-hidden {
     clip: rect(0 0 0 0);
@@ -212,6 +215,9 @@ nav {
 .map-header {
     flex: 0 0 auto;
     width: 100%;
+}
+.map-header h1 {
+    margin-inline-end: auto;
 }
 
 .map-map {
