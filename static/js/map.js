@@ -1,22 +1,45 @@
+/* wms Object is defined for each map in maps.json and inkected into map.njk
+
+"wms": {
+      "bounds":  [x0, y0, x1, y1],
+      "layer": "stadtverfall:1903",
+      "backdrop": "basemap" | "osm"
+  }
+*/
 
 
-var format = 'image/png';
+
+var layers = [
+  new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+      //ratio: 1,
+      url: 'https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?',
+      params: {
+        'FORMAT': 'image/png',
+        'VERSION': '1.1.0',
+        //"STYLES": '',
+        "LAYERS": wms.layer,
+        "TILED": true,
+        //"exceptions": 'application/vnd.ogc.se_inimage',
+      }
+    }),
+    opacity: 1.000000,
+  })
+]
 
 var BACKDROPS = {
   "basemap": [
     new ol.layer.Tile({
       'title': 'basemap.at Orthofoto',
       'type': 'base',
-      'opacity': 1.000000,
       source: new ol.source.XYZ({
-        attributions: '<a href="">basemap.at</a>',
+        attributions: '<a href="https://basemap.at">basemap.at</a>',
         url: 'https://maps1.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{z}/{y}/{x}.jpeg'
       })
     }),
     new ol.layer.Tile({
       'title': 'basemap.at',
       'type': 'base',
-      'opacity': 1.000000,
       source: new ol.source.XYZ({
         attributions: '<a href="https://basemap.at">basemap.at</a>',
         url: 'https://maps1.wien.gv.at/basemap/geolandbasemap/normal/google3857/{z}/{y}/{x}.png'
@@ -27,32 +50,11 @@ var BACKDROPS = {
     new ol.layer.Tile({
       'title': 'OSM',
       'type': 'base',
-      'opacity': 1.000000,
       source: new ol.source.OSM({
       })
     })
   ]
 }
-
-var tiled = new ol.layer.Tile({
-  source: new ol.source.TileWMS({
-    //ratio: 1,
-    url: wms.url,
-    params: {
-      'FORMAT': format,
-      'VERSION': '1.1.0',
-      //"STYLES": '',
-      "LAYERS": wms.layer,
-      "TILED": "true",
-      //"exceptions": 'application/vnd.ogc.se_inimage',
-    }
-  }),
-  opacity: 1.000000,
-});
-
-var layers = [
-  tiled,
-]
 
 if (wms.backdrop in BACKDROPS) { // ist
   layers.unshift(new ol.layer.Group({
@@ -68,13 +70,16 @@ var map = new ol.Map({
   view: new ol.View(),
 });
 
-const layerSwitcher = new ol.control.LayerSwitcher({
-  reverse: true,
-  groupSelectStyle: 'group'
-});
-map.addControl(layerSwitcher);
-
 map.getView().fit(wms.bounds, map.getSize());
+
+// add layerSwitcher if we have multiple base maps
+if(layers[0] instanceof ol.layer.Group && layers[0].getLayers().getLength() > 1) {
+  const layerSwitcher = new ol.control.LayerSwitcher({
+    reverse: true,
+    groupSelectStyle: 'group'
+  });
+  map.addControl(layerSwitcher);
+}
 
 /*
 *    B L E N D E R

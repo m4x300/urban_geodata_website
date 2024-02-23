@@ -4,8 +4,10 @@
         "slug": "stadtverfall-wien",
         "teaser": "Das Kartenwerk zeigt eine Aufnahme des Zustands um ...TODO",
         "wms": {
-            "url": "https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?",
-            "bounds":  [1803612.6334999999962747,6127872.0195000004023314,1838179.7309999999124557,6154349.8338999999687076],
+            "bounds": [
+                1803612.6334999999962747, 6127872.0195000004023314,
+                1838179.7309999999124557, 6154349.8338999999687076
+            ],
             "layer": "stadtverfall:wien_stadtverfall_web",
             "backdrop": "basemap"
         }
@@ -15,8 +17,10 @@
         "slug": "wien1903",
         "teaser": "TODO",
         "wms": {
-            "url": "https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?",
-            "bounds":  [1803612.6334999999962747,6127872.0195000004023314,1838179.7309999999124557,6154349.8338999999687076],
+            "bounds": [
+                1803612.6334999999962747, 6127872.0195000004023314,
+                1838179.7309999999124557, 6154349.8338999999687076
+            ],
             "layer": "stadtverfall:1903",
             "backdrop": "basemap"
         }
@@ -26,8 +30,10 @@
         "slug": "stadtverfall-budapest",
         "teaser": "TODO",
         "wms": {
-            "url": "https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?",
-            "bounds":  [2117775.872456544, 6017960.858266244, 2125627.1835807725, 6028453.813869935],
+            "bounds": [
+                2117775.872456544, 6017960.858266244,
+                2125627.1835807725, 6028453.813869935
+            ],
             "layer": "stadtverfall:budapest_stadtverfall",
             "backdrop": "osm"
         }
