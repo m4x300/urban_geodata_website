@@ -73,7 +73,7 @@ var map = new ol.Map({
 map.getView().fit(wms.bounds, map.getSize());
 
 // add layerSwitcher if we have multiple base maps
-if(layers[0] instanceof ol.layer.Group && layers[0].getLayers().getLength() > 1) {
+if (layers[0] instanceof ol.layer.Group && layers[0].getLayers().getLength() > 1) {
   const layerSwitcher = new ol.control.LayerSwitcher({
     reverse: true,
     groupSelectStyle: 'group'
@@ -87,15 +87,15 @@ if(layers[0] instanceof ol.layer.Group && layers[0].getLayers().getLength() > 1)
 var multiplyToggle = document.getElementById('ovl-multiply');
 
 function onMultiplyChange() {
-  var on = multiplyToggle.checked;
-  if (on) {
-    changeBlendMode('multiply');
-  } else {
-    changeBlendMode('source-over');
-  }
+  var blendmode = multiplyToggle.checked
+    ? 'multiply'
+    : 'source-over'
+  changeBlendMode(blendmode);
+  storeSetting('blendmode', blendmode);
 }
 multiplyToggle.addEventListener('change', onMultiplyChange);
-map.once('rendercomplete', onMultiplyChange);
+map.once('rendercomplete', () => changeBlendMode(getSetting('blendmode')));
+multiplyToggle.checked = getSetting('blendmode') === 'multiply'
 
 function changeBlendMode(mode) {
   var canvas = document.getElementById(map.getTarget()).querySelector('canvas');
@@ -108,9 +108,28 @@ function changeBlendMode(mode) {
   map.render();
 }
 
+/** Transparency */
+function setOpacity(percent) {
+  layers[layers.length - 1].setOpacity(parseFloat(percent));
+}
 var ovlSlider = document.getElementById("ovl-trans");
-ovlSlider.addEventListener('change', function () {
-  layers[layers.length - 1].setOpacity(this.value / 100);
+ovlSlider.addEventListener('input', function () {
+  const percent = this.value / 100
+  setOpacity(percent)
+  storeSetting('opacity', percent)
 }, {
   passive: true
 })
+setOpacity(getSetting('opacity', 1))
+ovlSlider.value = getSetting('opacity', 1) * 100
+
+
+function storeSetting(settingKey, value) {
+  localStorage.setItem('ugd.' + settingKey, value)
+}
+function getSetting(settingKey, defaultValue) {
+  const key = 'ugd.' + settingKey
+  return (key in localStorage)
+    ? localStorage.getItem('ugd.' + settingKey)
+    : defaultValue
+}
