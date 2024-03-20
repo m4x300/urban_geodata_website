@@ -13,29 +13,30 @@
         }
     },
     {
-        "title": "Wien 1903",
-        "slug": "wien1903",
-        "teaser": "TODO",
-        "wms": {
-            "bounds": [
-                1803612.6334999999962747, 6127872.0195000004023314,
-                1838179.7309999999124557, 6154349.8338999999687076
-            ],
-            "layer": "stadtverfall:1903",
-            "backdrop": "basemap"
-        }
-    },
-    {
-        "title": "Budapest",
+        "title": "Stadtverfall und Stadterneuerung Budapest 1993",
         "slug": "stadtverfall-budapest",
-        "teaser": "TODO",
+        "teaser": "Bauliche Erhebung der Häuser des „Stadtrehablitationsgebietes“",
         "wms": {
             "bounds": [
                 2117775.872456544, 6017960.858266244,
                 2125627.1835807725, 6028453.813869935
             ],
-            "layer": "stadtverfall:budapest_stadtverfall",
+            "layer": "stadtverfall:Stadtverfall und Stadterneuerung Budapest 1993",
             "backdrop": "osm"
         }
     }
+    {
+        "title": "Stadtverfall und Stadterneuerung in Bratislava 1991",
+        "slug": "stadtverfall-budapest",
+        "teaser": "Zustandskartierung der Altstadt von Bratislava",
+        "wms": {
+            "bounds": [
+                -574047.2936368671, -1281181.064984162,
+                -573181.0102789922, -1280169.0260136924
+            ],
+            "layer": "stadtverfall:Stadtverfall und Stadterneuerung in Bratislava 1991",
+            "backdrop": "osm"
+        }
+    }
+
 ]
