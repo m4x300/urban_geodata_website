@@ -1,14 +1,14 @@
 [
     {
-        "title": "Stadtverfall Wien",
+        "title": "Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
         "slug": "stadtverfall-wien",
-        "teaser": "Das Kartenwerk zeigt eine Aufnahme des Zustands um ...TODO",
+        "teaser": "Erhebung des baulichen Zustandes der Wiener Gründerzeit auf Gebäudeebene",
         "wms": {
             "bounds": [
                 1803612.6334999999962747, 6127872.0195000004023314,
                 1838179.7309999999124557, 6154349.8338999999687076
             ],
-            "layer": "stadtverfall:wien_stadtverfall_web",
+            "layer": "stadtverfall:Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
             "backdrop": "basemap"
         }
     },
