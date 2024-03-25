@@ -3,5 +3,4 @@ export default function(eleventyConfig) {
    
     eleventyConfig.addPassthroughCopy("node_modules/ol/dist/ol.js");
     eleventyConfig.addPassthroughCopy("node_modules/ol/ol.css");
-    eleventyConfig.addPassthroughCopy("node_modules/ol-layerswitcher/dist/*");
   };
