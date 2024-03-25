@@ -300,6 +300,7 @@ details summary, button, label {
     padding: 0.25rem 1ch;
     z-index: 100;
     background-color: white;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .map-blender h2 {
