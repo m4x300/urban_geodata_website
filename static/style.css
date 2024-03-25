@@ -86,6 +86,9 @@ svg {
     display: block;
     max-width: 100%;
 }
+video {
+    margin: 2rem auto;
+}
 
 input,
 button,
@@ -104,13 +107,18 @@ h6 {
     overflow-wrap: break-word;
 }
 
+h1 {
+    line-height: 1.1;
+}
+
 /** Default styles */
 
 :root {
     --rgb-blue: 79, 131, 176;
     --color-blue: rgb(var(--rgb-blue));
     --color-white: rgb(255, 255, 255);
-    --color-gray: rgb(200, 200, 200);
+    --color-gray: rgb(220, 220, 220);
+    --color-gray-text: rgb(110, 110, 110);
     --color-primary: var(--color-blue);
     --color-primary--text: var(--color-white);
 
@@ -136,6 +144,10 @@ a[href] {
 
 * {
     accent-color: var(--color-primary);
+}
+
+p + p {
+    margin-block-start: 1em;
 }
 
 main,
@@ -210,6 +222,11 @@ details summary, button, label {
 
 .map-card+.map-card {
     margin-top: 1rem;
+}
+
+.source {
+    font-size: 0.8rem;
+    color: var(--color-gray-text);
 }
 
 /** Map Page */
