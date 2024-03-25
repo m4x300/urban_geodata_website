@@ -43,6 +43,20 @@
             "vector": "stadtverfall:bratislava_stadtverfall",
             "backdrop": "osm"
         }
+    },
+    {
+        "title": "Geographische Strukturanalyse Wien ~1958",
+        "slug": "stadtstruktur",
+        "teaser": "Verbauung, Wohnungsstruktur und Landnutzung 1:10.000",
+        "preview": "img/stadtverfall_wien.png",
+        "wms": {
+            "bounds": [
+                1803612.6334999999962747, 6127872.0195000004023314,
+                1838179.7309999999124557, 6154349.8338999999687076
+            ],
+            "layer": "stadtstruktur:Georgraphische Strukturanalyse Wien",
+            "vector": "", 
+            "backdrop": "basemap"
+        }
     }
-
 ]
