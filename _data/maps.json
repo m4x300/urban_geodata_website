@@ -9,8 +9,8 @@
                 1803612.6334999999962747, 6127872.0195000004023314,
                 1838179.7309999999124557, 6154349.8338999999687076
             ],
-            "layer": "stadtverfall:Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
-            "vector": "stadtverfall:wien_stadtverfall", 
+            "layer": "urban_geodata:Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
+            "vector": "urban_geodata:wien_stadtverfall", 
             "backdrop": "basemap"
         }
     },
@@ -24,8 +24,8 @@
                 2117775.872456544, 6017960.858266244,
                 2125627.1835807725, 6028453.813869935
             ],
-            "layer": "stadtverfall:Stadtverfall und Stadterneuerung Budapest 1993",
-            "vector": "stadtverfall:budapest_stadtverfall",
+            "layer": "urban_geodata:Stadtverfall und Stadterneuerung Budapest 1993",
+            "vector": "urban_geodata:budapest_stadtverfall",
             "backdrop": "osm"
         }
     },
@@ -39,8 +39,8 @@
                 1901835.489517467, 6129224.809880861,
                 1906791.136005159, 6132670.997968416
               ],
-            "layer": "stadtverfall:Stadtverfall und Stadterneuerung in Bratislava 1991",
-            "vector": "stadtverfall:bratislava_stadtverfall",
+            "layer": "urban_geodata:Stadtverfall und Stadterneuerung in Bratislava 1991",
+            "vector": "urban_geodata:bratislava_stadtverfall",
             "backdrop": "osm"
         }
     },
@@ -54,7 +54,7 @@
                 1803612.6334999999962747, 6127872.0195000004023314,
                 1838179.7309999999124557, 6154349.8338999999687076
             ],
-            "layer": "stadtstruktur:Georgraphische Strukturanalyse Wien",
+            "layer": "urban_geodata:Georgraphische Strukturanalyse Wien",
             "backdrop": "basemap"
         }
     }
