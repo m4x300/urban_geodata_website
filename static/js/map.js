@@ -11,7 +11,7 @@
 var vectorLayer =  wms.vector ? new ol.layer.Tile({
   source: new ol.source.TileWMS({
     //ratio: 1,
-    url: 'https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?',
+    url: 'https://geo.isr.oeaw.ac.at/geoserver/urban_geodata/wms?',
     params: {
       'FORMAT': 'image/png',
       'VERSION': '1.1.0',
@@ -27,7 +27,7 @@ var vectorLayer =  wms.vector ? new ol.layer.Tile({
 var historicLayer = wms.layer ? new ol.layer.Tile({
   source: new ol.source.TileWMS({
     //ratio: 1,
-    url: 'https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?',
+    url: 'https://geo.isr.oeaw.ac.at/geoserver/urban_geodata/wms?',
     params: {
       'FORMAT': 'image/png',
       'VERSION': '1.1.0',
