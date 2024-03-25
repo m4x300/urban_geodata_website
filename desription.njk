@@ -8,8 +8,10 @@ layout: "page.njk"
 eleventyComputed:
     title: "{{ map.title }}"
 ---
-<main>
+<main class="descr-page">
+<img src="/{{ map.preview }}" class="descr-preview" alt="Ausschnitt der historischen Karte '{{ map.title }}'" />
 <h1>{{ map.title }}</h1>
+<p><a href="/{{ map.slug }}/map/">Karte öffnen</a></p>
 {% include "descriptions/" + (map.slug) + ".html" ignore missing %}
 <nav>
     <a href="/{{ map.slug }}/map/">Karte öffnen</a><br>

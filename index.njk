@@ -3,7 +3,7 @@ layout: page.njk
 title: Urban Geodata
 ---
 
-<main>
+<main class="overview">
 <h1>Urban Geodata</h1>
 <h2>Projektidee</h2>
 <p>
@@ -23,25 +23,40 @@ title: Urban Geodata
 
 <h2>Umsetzung</h2>
 <p>
-    Mit dem Open-Data-Portal werden die in den Karten enthaltenen Informationen erstmals seit Jahrzehnten für die Stadtforschung allgemein zugänglich gemacht und sind mit modernen GIS-Methoden verwertbar. Dazu werden die Kartenwerke eingescannt, georeferenziert und semiautomatisch vektorisiert. Die daraus generierten und katalogisierten Geodaten können über ein Webportal gesichtet, heruntergeladen und in andere Webkarten eingebettet werden – ähnlich der Funktionsweise diverser Open-Goverment-Data Portalen.
-Dabei würden diese Kartenwerke ermöglichen, den langfristigen Strukturwandel im Stadtraum sehr großmaßstäbig, auf der Ebene von Gebäuden oder Häuserblöcken, zu analysieren. Die langfristige Veränderung von Nachbarschaften könnten sehr detailliert analysiert werden.
-Folgende Kartenwerke wurden in dem Projekt verarbeitet:
+    Mit dem Open-Data-Portal werden die in den Karten enthaltenen Informationen erstmals seit Jahrzehnten für die Stadtforschung
+    allgemein zugänglich gemacht und sind mit modernen GIS-Methoden verwertbar. Dazu werden die Kartenwerke eingescannt,
+    georeferenziert und semiautomatisch vektorisiert. Die daraus generierten und katalogisierten Geodaten können über ein Webportal
+    gesichtet, heruntergeladen und in andere Webkarten eingebettet werden – ähnlich der Funktionsweise diverser Open-Goverment-Data
+    Portalen.
+</p>
+<p>
+    Dabei würden diese Kartenwerke ermöglichen, den langfristigen Strukturwandel im Stadtraum sehr großmaßstäbig, auf der Ebene
+    von Gebäuden oder Häuserblöcken, zu analysieren. Die langfristige Veränderung von Nachbarschaften könnten sehr detailliert
+    analysiert werden.
+</p>
+<p>
+    Folgende Kartenwerke wurden in dem Projekt verarbeitet:
 </p>
 
 {% for map in maps %}
 <article class="map-card">
-    <h2 class="u-align-h">
-        <img src="https://placehold.co/100">
-        <a href="/{{ map.slug }}">
-            {{ map.title }}
-        </a>
-    </h2>
-    <p>
-        {{ map.teaser }}
-    </p>
-    <a href="/{{ map.slug }}/map">
-        Karte öffnen
-    </a>
+    <img src="/{{ map.preview }}" width="160px" height="160px">
+    <div class="map-card__content">
+        <h2>
+            <a href="/{{ map.slug }}">
+                {{ map.title }}
+            </a>
+        </h2>
+        <p>
+            {{ map.teaser }}
+        </p>
+        <p>
+            → 
+            <a href="/{{ map.slug }}/map">
+                Karte öffnen
+            </a>
+        </p>
+    </div>
 </article>
 {% endfor %}
 </main>

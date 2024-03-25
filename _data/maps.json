@@ -3,6 +3,7 @@
         "title": "Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
         "slug": "stadtverfall-wien",
         "teaser": "Erhebung des baulichen Zustandes der Wiener Gründerzeit auf Gebäudeebene",
+        "preview": "img/stadtverfall_wien.png",
         "wms": {
             "bounds": [
                 1803612.6334999999962747, 6127872.0195000004023314,
@@ -17,6 +18,7 @@
         "title": "Stadtverfall und Stadterneuerung Budapest 1993",
         "slug": "stadtverfall-budapest",
         "teaser": "Bauliche Erhebung der Häuser des „Stadtrehablitationsgebietes“",
+        "preview": "img/stadtverfall_budapest.png",
         "wms": {
             "bounds": [
                 2117775.872456544, 6017960.858266244,
@@ -31,6 +33,7 @@
         "title": "Stadtverfall und Stadterneuerung in Bratislava 1991",
         "slug": "stadtverfall-bratislava",
         "teaser": "Zustandskartierung der Altstadt von Bratislava",
+        "preview": "img/stadtverfall_bratislava.png",
         "wms": {
             "bounds": [
                 -574047.2936368671, -1281181.064984162,
