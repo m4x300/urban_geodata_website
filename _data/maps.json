@@ -36,9 +36,9 @@
         "preview": "img/stadtverfall_bratislava.png",
         "wms": {
             "bounds": [
-                -574047.2936368671, -1281181.064984162,
-                -573181.0102789922, -1280169.0260136924
-            ],
+                1901835.489517467, 6129224.809880861,
+                1906791.136005159, 6132670.997968416
+              ],
             "layer": "stadtverfall:Stadtverfall und Stadterneuerung in Bratislava 1991",
             "vector": "stadtverfall:bratislava_stadtverfall",
             "backdrop": "osm"
