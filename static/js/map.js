@@ -51,6 +51,7 @@ var BACKDROPS = {
       'title': 'OSM',
       'type': 'base',
       source: new ol.source.OSM({
+        // attributions: '<a href="https://openstreetmap.org/copyright">OpenStreetMap</a>', uncomment to override default attribution
       })
     })
   ]
@@ -63,9 +64,14 @@ if (wms.backdrop in BACKDROPS) { // ist
   }))
 }
 
+var attribution = new ol.control.Attribution({
+  collapsible: false,
+})
+
 var map = new ol.Map({
   target: 'map',
   layers: layers,
+  controls: ol.control.defaults.defaults({attribution: false}).extend([attribution]),
   renderer: 'canvas',
   view: new ol.View(),
 });
