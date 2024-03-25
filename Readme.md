@@ -4,18 +4,25 @@ This projects provides a static webfrontend featuring a map viewer based on OL i
 
 ## Developemnt
 
-static website using eleventy, developement server startet 
+static website using eleventy, developement server started with
+
 ```
 npx @11ty/eleventy --serve
 ```
 
-adding functionalities via npm install ()
-`.eleventy.js` addPassthroughCopy
+Static resources, which should be shipped with the site, need to be configured in `.eleventy.js` with the
+`addPassthroughCopy` command.
 
 ## Adding Maps
 
 maps.json -> map.njk -> map.js
 
+The available maps are listed in `_data/maps.json`.
+
+The template `map.njk` iterates over those maps and generates a HTML file for each of them. The rendered HTML
+includes the configuration for the map (WMS URL, map extent, base layer). It also includes the form controls for transparency, selected map layers, etc.
+
+Finally, the JavaScript file `maps.js` instantiates the OpenLayers map in the browser depending on the config in HTML file.
 
 ## Localization
 
@@ -32,7 +39,8 @@ The selected lanugage is stored in a cookie `udg.lang`.
 
 ## Deployment 
 
+Build:
 ```
-npx @11ty/eleventy --serve
+npx @11ty/eleventy
 ```
  Upload contents of `_site` 
