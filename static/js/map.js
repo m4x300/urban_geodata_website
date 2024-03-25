@@ -2,67 +2,82 @@
 
 "wms": {
       "bounds":  [x0, y0, x1, y1],
-      "layer": "stadtverfall:1903",
+      "layer": "stadtverfall:Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
+      "vector": "stadtverfall:wien_stadtverfall",
       "backdrop": "basemap" | "osm"
   }
 */
 
+var vectorLayer =  wms.vector ? new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    //ratio: 1,
+    url: 'https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?',
+    params: {
+      'FORMAT': 'image/png',
+      'VERSION': '1.1.0',
+      //"STYLES": '',
+      "LAYERS": wms.vector,
+      "TILED": true,
+      //"exceptions": 'application/vnd.ogc.se_inimage',
+    }
+  }),
+  opacity: 1.000000,
+}) : undefined
+
+var historicLayer = wms.layer ? new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    //ratio: 1,
+    url: 'https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?',
+    params: {
+      'FORMAT': 'image/png',
+      'VERSION': '1.1.0',
+      //"STYLES": '',
+      "LAYERS": wms.layer,
+      "TILED": true,
+      //"exceptions": 'application/vnd.ogc.se_inimage',
+    }
+  }),
+  opacity: 1.000000,
+}) : undefined
+
+
+var BACKDROPS = {
+  basemap: new ol.layer.Tile({
+    'title': 'basemap.at',
+    'type': 'base',
+    source: new ol.source.XYZ({
+      attributions: '<a href="https://basemap.at">basemap.at</a>',
+      url: 'https://maps1.wien.gv.at/basemap/geolandbasemap/normal/google3857/{z}/{y}/{x}.png'
+    }),
+    visible: false,
+  }),
+  basemapOrtho: new ol.layer.Tile({
+    'title': 'basemap.at Orthofoto',
+    'type': 'base',
+    source: new ol.source.XYZ({
+      attributions: '<a href="https://basemap.at">basemap.at</a>',
+      url: 'https://maps1.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{z}/{y}/{x}.jpeg'
+    }),
+    visible: false,
+  }),
+  osm: new ol.layer.Tile({
+    'title': 'OSM',
+    'type': 'base',
+    source: new ol.source.OSM({
+      // attributions: '<a href="https://openstreetmap.org/copyright">OpenStreetMap</a>', uncomment to override default attribution
+    }),
+    visible: false,
+  })
+}
 
 
 var layers = [
-  new ol.layer.Tile({
-    source: new ol.source.TileWMS({
-      //ratio: 1,
-      url: 'https://geo.isr.oeaw.ac.at/geoserver/stadtverfall/wms?',
-      params: {
-        'FORMAT': 'image/png',
-        'VERSION': '1.1.0',
-        //"STYLES": '',
-        "LAYERS": wms.layer,
-        "TILED": true,
-        //"exceptions": 'application/vnd.ogc.se_inimage',
-      }
-    }),
-    opacity: 1.000000,
-  })
+  BACKDROPS.basemap,
+  BACKDROPS.basemapOrtho,
+  BACKDROPS.osm,
+  historicLayer,
+  vectorLayer,
 ]
-
-var BACKDROPS = {
-  "basemap": [
-    new ol.layer.Tile({
-      'title': 'basemap.at Orthofoto',
-      'type': 'base',
-      source: new ol.source.XYZ({
-        attributions: '<a href="https://basemap.at">basemap.at</a>',
-        url: 'https://maps1.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{z}/{y}/{x}.jpeg'
-      })
-    }),
-    new ol.layer.Tile({
-      'title': 'basemap.at',
-      'type': 'base',
-      source: new ol.source.XYZ({
-        attributions: '<a href="https://basemap.at">basemap.at</a>',
-        url: 'https://maps1.wien.gv.at/basemap/geolandbasemap/normal/google3857/{z}/{y}/{x}.png'
-      })
-    })
-  ],
-  "osm": [
-    new ol.layer.Tile({
-      'title': 'OSM',
-      'type': 'base',
-      source: new ol.source.OSM({
-        // attributions: '<a href="https://openstreetmap.org/copyright">OpenStreetMap</a>', uncomment to override default attribution
-      })
-    })
-  ]
-}
-
-if (wms.backdrop in BACKDROPS) { // ist
-  layers.unshift(new ol.layer.Group({
-    title: 'Base maps',
-    layers: BACKDROPS[wms.backdrop],
-  }))
-}
 
 var attribution = new ol.control.Attribution({
   collapsible: false,
@@ -78,19 +93,19 @@ var map = new ol.Map({
 
 map.getView().fit(wms.bounds, map.getSize());
 
-// add layerSwitcher if we have multiple base maps
-if (layers[0] instanceof ol.layer.Group && layers[0].getLayers().getLength() > 1) {
-  const layerSwitcher = new ol.control.LayerSwitcher({
-    reverse: true,
-    groupSelectStyle: 'group',
-    // activationMode: 'click'
-  });
-  map.addControl(layerSwitcher);
+
+/** Settings utilities */
+function storeSetting(settingKey, value) {
+  localStorage.setItem('ugd.' + settingKey, value)
+}
+function getSetting(settingKey, defaultValue) {
+  const key = 'ugd.' + settingKey
+  return (key in localStorage)
+    ? localStorage.getItem('ugd.' + settingKey)
+    : defaultValue
 }
 
-/*
-*    B L E N D E R
-*/
+/* Blend mode */
 var multiplyToggle = document.getElementById('ovl-multiply');
 
 function onMultiplyChange() {
@@ -117,7 +132,7 @@ function changeBlendMode(mode) {
 
 /** Transparency */
 function setOpacity(percent) {
-  layers[layers.length - 1].setOpacity(parseFloat(percent));
+  historicLayer.setOpacity(parseFloat(percent));
 }
 var ovlSlider = document.getElementById("ovl-trans");
 ovlSlider.addEventListener('input', function () {
@@ -130,13 +145,32 @@ ovlSlider.addEventListener('input', function () {
 setOpacity(getSetting('opacity', 1))
 ovlSlider.value = getSetting('opacity', 1) * 100
 
+/** Base layers */
+var backdropRadios = document.querySelectorAll('input[name="backdrop"]')
+for(var backdropRadio of backdropRadios) {
+  BACKDROPS[backdropRadio.value].setVisible(backdropRadio.checked)
 
-function storeSetting(settingKey, value) {
-  localStorage.setItem('ugd.' + settingKey, value)
+  backdropRadio.addEventListener('change', function() {
+    var layer = BACKDROPS[this.value]
+    layer.setVisible(true)
+    Object.entries(BACKDROPS).forEach(([key, value]) => {
+      if (key !== this.value) {
+        value.setVisible(false)
+      }
+    })
+  })
 }
-function getSetting(settingKey, defaultValue) {
-  const key = 'ugd.' + settingKey
-  return (key in localStorage)
-    ? localStorage.getItem('ugd.' + settingKey)
-    : defaultValue
+
+/** Vektorisierung "GIS-Layer" */
+var vectorToggle = document.getElementById('ovl-vector')
+if(vectorToggle && vectorLayer) {
+  function onVectorChange() {
+    var showVector = vectorToggle.checked
+    vectorLayer.setVisible(showVector)
+    storeSetting('showVector', showVector)
+  }
+  vectorToggle.addEventListener('change', onVectorChange);
+  map.once('rendercomplete', () => changeBlendMode(getSetting('showVector')));
+  vectorToggle.checked = getSetting('showVector') === true
+  vectorLayer.setVisible(vectorToggle.checked)
 }

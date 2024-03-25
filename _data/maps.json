@@ -9,6 +9,7 @@
                 1838179.7309999999124557, 6154349.8338999999687076
             ],
             "layer": "stadtverfall:Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
+            "vector": "stadtverfall:wien_stadtverfall", 
             "backdrop": "basemap"
         }
     },
@@ -22,6 +23,7 @@
                 2125627.1835807725, 6028453.813869935
             ],
             "layer": "stadtverfall:Stadtverfall und Stadterneuerung Budapest 1993",
+            "vector": "stadtverfall:budapest_stadtverfall",
             "backdrop": "osm"
         }
     },
@@ -35,6 +37,7 @@
                 -573181.0102789922, -1280169.0260136924
             ],
             "layer": "stadtverfall:Stadtverfall und Stadterneuerung in Bratislava 1991",
+            "vector": "stadtverfall:bratislava_stadtverfall",
             "backdrop": "osm"
         }
     }

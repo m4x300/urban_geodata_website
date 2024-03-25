@@ -10,7 +10,6 @@ eleventyComputed:
 ---
 
 <link  rel="stylesheet" href="/node_modules/ol/ol.css" />
-<link rel="stylesheet" href="/node_modules/ol-layerswitcher/dist/ol-layerswitcher.css" />
 
 <div class="map-page">
   <main class="map-header u-align-h">
@@ -23,8 +22,26 @@ eleventyComputed:
 
   <div class="map-map" id="map">
     <div class="map-blender">
+      <h2>Hintergrund</h2>
+      {% if map.wms.backdrop == "basemap" %}
+        <label class="u-align-h">
+          <input type="radio" name="backdrop" value="basemap" checked />
+          Basemap Standard
+        </label>
+        <label class="u-align-h">
+          <input type="radio" name="backdrop" value="basemapOrtho" />
+          Basemap Orthofoto
+        </label>
+      {% else %}
+        <label class="u-align-h">
+          <input type="radio" name="backdrop" value="osm" checked disabled />
+          OpenStreetMaps
+        </label>
+      {% endif %}
+
+      <h2>Historische Karte</h2>
       <label class="u-align-h" title="Opazität des Daten-Layers">
-        <img src="/img/contrast.svg">
+        <img src="/img/contrast.svg" class="map-blender-icon">
         <span class="visually-hidden">Opazität des Daten-Layers</span>
         <input type="range" min="0" max="100" value="100" class="slider" id="ovl-trans">
       </label>
@@ -32,6 +49,18 @@ eleventyComputed:
         <input type="checkbox" id="ovl-multiply" />
         Multiplizieren
       </label>
+
+      {% if map.wms.vector %}
+      <h2>GIS-Layer</h2>
+      <label class="u-align-h">
+        <input type="checkbox" id="ovl-vector" />
+        anzeigen
+      </label>
+      <details>
+        <summary>Legende</summary>
+        <img class="map-legend" src="https://geo.isr.oeaw.ac.at/geoserver/wms?request=GetLegendGraphic&version=1.1.1&format=image/png&width=20&height=20&layer={{ map.wms.vector }}" />
+      </details>
+      {% endif %}
     </div>
   </div>
 </div>

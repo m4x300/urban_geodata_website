@@ -9,7 +9,6 @@
     "@11ty/eleventy": "3.0.0-alpha.5"
   },
   "dependencies": {
-    "ol": "^8.2.0",
-    "ol-layerswitcher": "^4.1.1"
+    "ol": "^8.2.0"
   }
 }

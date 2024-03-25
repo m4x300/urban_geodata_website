@@ -169,6 +169,10 @@ nav {
     padding: 1rem 0;
 }
 
+details summary, button, label {
+    cursor: pointer;
+}
+
 /** Utilities */
 
 .u-align-h {
@@ -230,39 +234,6 @@ nav {
     position: relative;
 }
 
-/** Override and align styles from ol-layerswitcher */
-div.layer-switcher {
-    top: .5em;
-    right: .5em;
-}
-
-div.layer-switcher .panel {
-    padding: .5em;
-    border-radius: 0;
-}
-
-div.layer-switcher ul {
-    margin: 0.5rem 0;
-}
-
-div.layer-switcher ul ul {
-    padding-inline: 0;
-}
-
-div.layer-switcher ul ul li {
-    display: flex;
-    gap: 1ch;
-    align-items: center;
-}
-
-div.layer-switcher li input {
-    position: static;
-}
-
-div.layer-switcher li label {
-    padding: 0;
-    margin: 0;
-}
 
 /** Widget for Opacity and Blend Mode */
 
@@ -275,7 +246,13 @@ div.layer-switcher li label {
     background-color: white;
 }
 
-.map-blender img,
+.map-blender h2 {
+    font-size: 0.8rem;
+    margin-block: 0.5rem;
+    text-transform: uppercase;
+}
+
+.map-blender-icon,
 .map-blender input[type=checkbox] {
     width: 2ch;
 }

@@ -8,9 +8,6 @@ dependencies:
   ol:
     specifier: ^8.2.0
     version: 8.2.0
-  ol-layerswitcher:
-    specifier: ^4.1.1
-    version: 4.1.1(ol@8.2.0)
 
 devDependencies:
   '@11ty/eleventy':
@@ -1242,14 +1239,6 @@ packages:
       define-properties: 1.2.1
       es-abstract: 1.22.4
     dev: true
-
-  /ol-layerswitcher@4.1.1(ol@8.2.0):
-    resolution: {integrity: sha512-uqIqZCr/23GoOIOl2T1iPzcVBPweJZgkVHTrn8DLNCa3cCuX+aJzz0DhkA+qJjm5NqXO5uCvB7zpk9vWtRWmsQ==}
-    peerDependencies:
-      ol: '>=5.0.0'
-    dependencies:
-      ol: 8.2.0
-    dev: false
 
   /ol@8.2.0:
     resolution: {integrity: sha512-/m1ddd7Jsp4Kbg+l7+ozR5aKHAZNQOBAoNZ5pM9Jvh4Etkf0WGkXr9qXd7PnhmwiC1Hnc2Toz9XjCzBBvexfXw==}
