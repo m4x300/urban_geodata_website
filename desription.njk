@@ -6,15 +6,30 @@ pagination:
 permalink: "/{{ map.slug }}/index.html"
 layout: "page.njk"
 eleventyComputed:
-    title: "{{ map.title }}"
+    title: "{{ map.title.de }}"
 ---
 <main class="descr-page">
 <img src="/{{ map.preview }}" class="descr-preview" alt="Ausschnitt der historischen Karte '{{ map.title }}'" />
-<h1>{{ map.title }}</h1>
-<p><a href="/{{ map.slug }}/map/">Karte öffnen</a></p>
-{% include "descriptions/" + (map.slug) + ".html" ignore missing %}
-<nav>
+
+<h1 lang="de">{{ map.title.de }}</h1>
+<h1 lang="en">{{ map.title.en }}</h1>
+
+<p lang="de"><a href="/{{ map.slug }}/map/">Karte öffnen</a></p>
+<p lang="en"><a href="/{{ map.slug }}/map/">Open Map</a></p>
+
+<div lang="de">
+    {% include "descriptions/" + (map.slug) + ".de.html" ignore missing %}
+</div>
+<div lang="en">
+    {% include "descriptions/" + (map.slug) + ".en.html" ignore missing %}
+</div>
+
+<nav lang="de">
     <a href="/{{ map.slug }}/map/">Karte öffnen</a><br>
     <a href="/">Zurück zur Übersicht</a>
+</nav>
+<nav lang="en">
+    <a href="/{{ map.slug }}/map/">Open Map</a><br>
+    <a href="/">Back to Overview</a>
 </nav>
 </main>

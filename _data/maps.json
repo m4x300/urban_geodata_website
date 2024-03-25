@@ -1,8 +1,14 @@
 [
     {
-        "title": "Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
+        "title": {
+            "de": "Stadtverfall und Stadterneuerung in Wien 1986 - 1989",
+            "en": "Urban Decay and Urban Renewal in Vienna 1986 - 1989"
+        },
         "slug": "stadtverfall-wien",
-        "teaser": "Erhebung des baulichen Zustandes der Wiener Gründerzeit auf Gebäudeebene",
+        "teaser": {
+            "de": "Erhebung des baulichen Zustandes der Wiener Gründerzeit auf Gebäudeebene",
+            "en": "Survey of the structural condition of Viennese Gründerzeit buildings on a building level"
+        },
         "preview": "img/stadtverfall_wien.png",
         "wms": {
             "bounds": [
@@ -15,9 +21,15 @@
         }
     },
     {
-        "title": "Stadtverfall und Stadterneuerung Budapest 1993",
+        "title": {
+            "de": "Stadtverfall und Stadterneuerung Budapest 1993",
+            "en": "Urban Decay and Urban Renewal in Budapest 1986 - 1989"
+        },
         "slug": "stadtverfall-budapest",
-        "teaser": "Bauliche Erhebung der Häuser des „Stadtrehablitationsgebietes“",
+        "teaser": {
+            "de": "Bauliche Erhebung der Häuser des „Stadtrehablitationsgebietes“",
+            "en": "TODO"
+        },
         "preview": "img/stadtverfall_budapest.png",
         "wms": {
             "bounds": [
@@ -30,9 +42,15 @@
         }
     },
     {
-        "title": "Stadtverfall und Stadterneuerung in Bratislava 1991",
+        "title": {
+            "de": "Stadtverfall und Stadterneuerung in Bratislava 1991",
+            "en": "Urban Decay and Urban Renewal in Bratislava 1986 - 1989"
+        },
         "slug": "stadtverfall-bratislava",
-        "teaser": "Zustandskartierung der Altstadt von Bratislava",
+        "teaser": {
+            "de": "Zustandskartierung der Altstadt von Bratislava",
+            "en": "TODO"
+        },
         "preview": "img/stadtverfall_bratislava.png",
         "wms": {
             "bounds": [
@@ -45,9 +63,15 @@
         }
     },
     {
-        "title": "Geographische Strukturanalyse Wien ~1958",
+        "title": {
+            "de": "Geographische Strukturanalyse Wien ~1958",
+            "en": "Geographical Structure Analysis Vienna ~1958"
+        },
         "slug": "stadtstruktur-strukturanalyse-wien",
-        "teaser": "Verbauung, Wohnungsstruktur und Landnutzung 1:10.000",
+        "teaser": {
+            "de": "Verbauung, Wohnungsstruktur und Landnutzung 1:10.000",
+            "en": "Development, housing structure and land use 1:10,000"
+        },
         "preview": "img/stadtstruktur_strukturanalyse.png",
         "wms": {
             "bounds": [

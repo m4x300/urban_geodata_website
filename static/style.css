@@ -161,7 +161,9 @@ footer {
 }
 
 footer {
-    margin-top: 1rem;
+    clear: both;
+    margin-top: 2rem;
+    padding: 1rem 0;
     border-top: 1px solid var(--color-gray);
 }
 
@@ -184,6 +186,19 @@ nav {
 
 details summary, button, label {
     cursor: pointer;
+}
+
+/** l10n switch */
+
+html[lang=en] *[lang=de] {
+    display: none;
+}
+html[lang=de] *[lang=en] {
+    display: none;
+}
+.lang-button[aria-pressed=true] {
+    font-weight: bold;
+    color: var(--color-text);
 }
 
 /** Utilities */

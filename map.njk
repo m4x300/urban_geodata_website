@@ -6,23 +6,29 @@ pagination:
 permalink: "/{{ map.slug }}/map/index.html"
 layout: "page.njk"
 eleventyComputed:
-    title: "{{ map.title }}"
+    title: "{{ map.title.de }}"
 ---
 
 <link  rel="stylesheet" href="/node_modules/ol/ol.css" />
 
 <div class="map-page">
   <main class="map-header u-align-h">
-    <h1>{{ map.title }}</h1>
-    <nav class="u-align-h u-flex-wrap">
+    <h1 lang="de">{{ map.title.de }}</h1>
+    <h1 lang="en">{{ map.title.en }}</h1>
+    <nav class="u-align-h u-flex-wrap" lang="de">
       <a href="/{{ map.slug}}">Zur Beschreibung</a>
       <a href="/">Zur Übersicht</a>
+    </nav>
+    <nav class="u-align-h u-flex-wrap" lang="en">
+      <a href="/{{ map.slug}}">Description</a>
+      <a href="/">Back to Overview</a>
     </nav>
   </main>
 
   <div class="map-map" id="map">
     <div class="map-blender">
-      <h2>Hintergrund</h2>
+      <h2 lang="de">Hintergrund</h2>
+      <h2 lang="en">Background</h2>
       {% if map.wms.backdrop == "basemap" %}
         <label class="u-align-h">
           <input type="radio" name="backdrop" value="basemap" checked />
@@ -47,17 +53,24 @@ eleventyComputed:
       </label>
       <label class="u-align-h">
         <input type="checkbox" id="ovl-multiply" />
-        Multiplizieren
+        <span lang="de">Multiplizieren</span>
+        <span lang="en">Multiply</span>
       </label>
 
       {% if map.wms.vector %}
-      <h2>Vektorlayer</h2>
+      <h2 lang="de">Vektorlayer</h2>
+      <h2 lang="en">Vector Layer</h2>
       <label class="u-align-h">
         <input type="checkbox" id="ovl-vector" />
-        anzeigen
+        
+        <span lang="de">anzeigen</span>
+        <span lang="en">show</span>
       </label>
-      <details>
-        <summary>Legende</summary>
+      <details anzeigen>
+        <summary>
+          <span lang="de">Legende</span>
+          <span lang="de">Legend</span>
+        </summary>
         <img class="map-legend" src="https://geo.isr.oeaw.ac.at/geoserver/wms?request=GetLegendGraphic&version=1.1.1&format=image/png&width=20&height=20&layer={{ map.wms.vector }}" />
       </details>
       {% endif %}

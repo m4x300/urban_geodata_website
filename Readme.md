@@ -16,6 +16,20 @@ adding functionalities via npm install ()
 
 maps.json -> map.njk -> map.js
 
+
+## Localization
+
+The website is offered in german and english language.
+All HTML tags containing text, should be repeated for both locales with the `lang`-attribute. Example:
+
+```html
+<h1 lang="de">Deutscher Titel</h1>
+<h1 lang="en">English Title</h1>
+```
+
+The initial lanugage is determined by inspecting the `navigator.language` property. Users can switch the language by clicking a button.
+The selected lanugage is stored in a cookie `udg.lang`.
+
 ## Deployment 
 
 ```
