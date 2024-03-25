@@ -1,6 +1,6 @@
 # Urban Geodata Website
 
-This projects provides a web ...
+This projects provides a static webfrontend featuring a map viewer based on OL in order to display the contents of a geoserver instance.
 
 ## Developemnt
 
