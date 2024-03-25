@@ -163,7 +163,7 @@ footer {
 footer {
     clear: both;
     margin-top: 2rem;
-    padding: 1rem 0;
+    padding-block: 1rem;
     border-top: 1px solid var(--color-gray);
 }
 
@@ -211,6 +211,12 @@ html[lang=de] *[lang=en] {
 
 .u-flex-wrap {
     flex-wrap: wrap;
+}
+.u-flex-align--start {
+    align-items: flex-start;
+}
+.u-flex-justify--between {
+    justify-content: space-between;
 }
 
 .visually-hidden {
