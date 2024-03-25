@@ -77,7 +77,7 @@ var layers = [
   BACKDROPS.osm,
   historicLayer,
   vectorLayer,
-]
+].filter(layer => layer)
 
 var attribution = new ol.control.Attribution({
   collapsible: false,
