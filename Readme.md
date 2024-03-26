@@ -35,7 +35,7 @@ All HTML tags containing text, should be repeated for both locales with the `lan
 ```
 
 The initial lanugage is determined by inspecting the `navigator.language` property. Users can switch the language by clicking a button.
-The selected lanugage is stored in a cookie `udg.lang`.
+The selected lanugage is stored in localStorage with the key `udg.lang`.
 
 ## Deployment 
 
