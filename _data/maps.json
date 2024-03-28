@@ -23,12 +23,12 @@
     {
         "title": {
             "de": "Stadtverfall und Stadterneuerung Budapest 1993",
-            "en": "Urban Decay and Urban Renewal in Budapest 1986 - 1989"
+            "en": "Urban Decay and Urban Renewal in Budapest 1993"
         },
         "slug": "stadtverfall-budapest",
         "teaser": {
             "de": "Bauliche Erhebung der Häuser des „Stadtrehablitationsgebietes“",
-            "en": "TODO"
+            "en": "Structural survey of buildings within „urban renewal area“"
         },
         "preview": "img/stadtverfall_budapest.png",
         "wms": {
@@ -44,12 +44,12 @@
     {
         "title": {
             "de": "Stadtverfall und Stadterneuerung in Bratislava 1991",
-            "en": "Urban Decay and Urban Renewal in Bratislava 1986 - 1989"
+            "en": "Urban Decay and Urban Renewal in Bratislava 1991"
         },
         "slug": "stadtverfall-bratislava",
         "teaser": {
             "de": "Zustandskartierung der Altstadt von Bratislava",
-            "en": "TODO"
+            "en": "Condition mapping of Bratislava's old town"
         },
         "preview": "img/stadtverfall_bratislava.png",
         "wms": {
