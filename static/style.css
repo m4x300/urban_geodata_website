@@ -115,8 +115,7 @@ h1 {
 /** Default styles */
 
 :root {
-    --rgb-blue: 79, 131, 176;
-    --color-blue: rgb(var(--rgb-blue));
+    --color-blue: rgb(52, 92, 127);
     --color-white: rgb(255, 255, 255);
     --color-gray: rgb(220, 220, 220);
     --color-gray-text: rgb(110, 110, 110);
