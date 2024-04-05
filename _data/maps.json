@@ -9,7 +9,7 @@
             "de": "Erhebung des baulichen Zustandes der Wiener Gründerzeit auf Gebäudeebene",
             "en": "Survey of the structural condition of Viennese Gründerzeit buildings on a building level"
         },
-        "preview": "img/stadtverfall_wien.png",
+        "preview": "img/stadtverfall_wien",
         "wms": {
             "bounds": [
                 1803612.6334999999962747, 6127872.0195000004023314,
@@ -30,7 +30,7 @@
             "de": "Bauliche Erhebung der Häuser des „Stadtrehablitationsgebietes“",
             "en": "Structural survey of buildings within „urban renewal area“"
         },
-        "preview": "img/stadtverfall_budapest.png",
+        "preview": "img/stadtverfall_budapest",
         "wms": {
             "bounds": [
                 2117775.872456544, 6017960.858266244,
@@ -51,7 +51,7 @@
             "de": "Zustandskartierung der Altstadt von Bratislava",
             "en": "Condition mapping of Bratislava's old town"
         },
-        "preview": "img/stadtverfall_bratislava.png",
+        "preview": "img/stadtverfall_bratislava",
         "wms": {
             "bounds": [
                 1901835.489517467, 6129224.809880861,
@@ -72,7 +72,7 @@
             "de": "Verbauung, Wohnungsstruktur und Landnutzung 1:10.000",
             "en": "Development, housing structure and land use 1:10,000"
         },
-        "preview": "img/stadtstruktur_strukturanalyse.png",
+        "preview": "img/stadtstruktur_strukturanalyse",
         "wms": {
             "bounds": [
                 1803612.6334999999962747, 6127872.0195000004023314,

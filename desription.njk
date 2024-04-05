@@ -9,7 +9,12 @@ eleventyComputed:
     title: "{{ map.title.de }}"
 ---
 <main class="descr-page">
-<img src="/{{ map.preview }}" class="descr-preview" alt="Ausschnitt der historischen Karte '{{ map.title }}'" />
+<img
+  src="/{{ map.preview }}.png"
+  srcset="/{{ map.preview }}-160.webp 160w"
+  alt="Ausschnitt der historischen Karte '{{ map.title.de }}'"
+  class="descr-preview"
+/>
 
 <h1 lang="de">{{ map.title.de }}</h1>
 <h1 lang="en">{{ map.title.en }}</h1>
