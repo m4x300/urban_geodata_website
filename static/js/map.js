@@ -42,7 +42,7 @@ function initMap() {
       'type': 'base',
       source: new ol.source.XYZ({
         attributions: '<a href="https://basemap.at">basemap.at</a>',
-        url: 'https://maps1.wien.gv.at/basemap/geolandbasemap/normal/google3857/{z}/{y}/{x}.png'
+        url: 'https://mapsneu.wien.gv.at/basemap/geolandbasemap/normal/google3857/{z}/{y}/{x}.png'
       }),
       visible: false,
     }),
@@ -51,7 +51,7 @@ function initMap() {
       'type': 'base',
       source: new ol.source.XYZ({
         attributions: '<a href="https://basemap.at">basemap.at</a>',
-        url: 'https://maps1.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{z}/{y}/{x}.jpeg'
+        url: 'https://mapsneu.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{z}/{y}/{x}.jpeg'
       }),
       visible: false,
     }),
